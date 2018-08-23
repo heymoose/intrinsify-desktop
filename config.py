@@ -1,1 +1,1 @@
-quandl_auth_token = ''
+quandl_api_key = ''

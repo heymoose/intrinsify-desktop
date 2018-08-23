@@ -5,8 +5,8 @@ import time
 import config
 
 
-auth_tok = config.quandl_auth_token
+api_key = config.quandl_api_key
 
-data = quandl.get("WIKI/KO", authtoken = auth_tok)
+data = quandl.get("WIKI/KO", api_key = api_key)
 
 print(data)
