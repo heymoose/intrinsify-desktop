@@ -1,0 +1,1 @@
+quandl_auth_token = ''
