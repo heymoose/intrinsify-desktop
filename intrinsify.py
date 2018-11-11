@@ -1,6 +1,4 @@
 import sys
-import pandas as pd
-import datetime as dt
 from iexfinance import Stock
 from iexfinance import get_historical_data
 from iexfinance import get_market_tops
