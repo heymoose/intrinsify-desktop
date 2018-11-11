@@ -1,11 +1,13 @@
 import sys
+import pandas as pd
 from iexfinance import Stock
 from iexfinance import get_historical_data
 from iexfinance import get_market_tops
 from iexfinance import get_stats_intraday
+from money import Money
 
-def float_to_currency_string(num):
-    return '${:,.2f}'.format(float(num))
+def format_num_to_currency(num):
+    return Money(num, 'USD').format('en_US')
 
 def float_to_percentage_string(num):
     return '{:.2f}%'.format(float(num))
@@ -33,9 +35,9 @@ norm_stock_intrinsic_value = stock_intrinsic_value / stock_price
 
 print(format_result_string(stock_name,
                            ticker.upper(),
-                           float_to_currency_string(stock_price),
+                           format_num_to_currency(stock_price),
                            float_to_percentage_string(flat_growth_estimate),
                            float_to_percentage_string(aaa_corporate_bond_yield),
-                           float_to_currency_string(stock_eps),
-                           float_to_currency_string(stock_intrinsic_value),
+                           format_num_to_currency(stock_eps),
+                           format_num_to_currency(stock_intrinsic_value),
                            '{:.2f}'.format(norm_stock_intrinsic_value)))
